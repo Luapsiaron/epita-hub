@@ -1,0 +1,23 @@
+[
+  {
+    "username": "paulnorais",
+    "password": "student",
+    "campus": "Rennes",
+    "bio": "Student EPITA Rennes.",
+    "photo": "https://www.francetvinfo.fr/pictures/KI83JKIWxYVA8ng-cUtYxM6l-z8/1200x1200/2016/08/23/shrek-5.jpg"
+  },
+  {
+    "username": "test",
+    "password": "test",
+    "campus": "Rennes",
+    "bio": "t",
+    "photo": ""
+  },
+  {
+    "username": "test2",
+    "password": "test2",
+    "campus": "Rennes",
+    "bio": "",
+    "photo": ""
+  }
+]
