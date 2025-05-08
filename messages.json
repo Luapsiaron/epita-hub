@@ -1,0 +1,18 @@
+{
+  "general": [
+    {
+      "user": "system",
+      "message": "Welcome to the general channel!"
+    },
+    {
+      "user": "paulnorais",
+      "message": "test"
+    },
+    {
+      "user": "paulnorais",
+      "message": "yeah"
+    }
+  ],
+  "test": [],
+  "private": []
+}
