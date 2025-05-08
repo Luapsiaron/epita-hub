@@ -1,0 +1,23 @@
+{
+  "general": {
+    "name": "general",
+    "creator": "system",
+    "private": false,
+    "members": []
+  },
+  "test": {
+    "name": "test",
+    "creator": "paulnorais",
+    "private": false,
+    "members": []
+  },
+  "private": {
+    "name": "private",
+    "creator": "paulnorais",
+    "private": true,
+    "members": [
+      "test",
+      "paulnorais"
+    ]
+  }
+}
