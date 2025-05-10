@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infrastructure Monitoring – EPITA Hub</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #204060;
+      color: #0c2340;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0c2340;
+    }
+
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      margin-top: 1rem;
+    }
+
+    h2 {
+      margin-top: 3rem;
+      color: #0c2340;
+      text-align: center;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .back-link a {
+      color: #005baa;
+      text-decoration: none;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<div id="navbar"></div>
+  <main>
+    <h1>Infrastructure Monitoring</h1>
+    <p style="text-align: center;">
+      This page brings together multiple dashboards to monitor EPITA's systems.
+    </p>
+
+    <h2>Grafana Dashboard</h2>
+    <iframe 
+      src="https://grafana.ops.k8s.cri.epita.fr/d/128b8190f34adb4e356df4a324acef05/maas-overview" 
+      title="Grafana Monitoring Dashboard" 
+      loading="lazy">
+    </iframe>
+
+    <h2>Infrastructure Status – Devou.ps</h2>
+    <iframe 
+      src="https://devou.ps/" 
+      title="EPITA Infrastructure Status" 
+      loading="lazy" 
+      height="600">
+    </iframe>
+
+    <div class="back-link">
+      <p><a href="index.html">&larr; Back to Home</a></p>
+    </div>
+  </main>
+  <script src="navbar.js"></script>
+</body>
+</html>
