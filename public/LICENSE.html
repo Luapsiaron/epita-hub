@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIT License</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #204060;
+      color: #0c2340;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0c2340;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      font-size: 0.95rem;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .back-link a {
+      color: #005baa;
+      text-decoration: none;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<div id="navbar"></div>
+  <main>
+    <h1>MIT License</h1>
+    <pre>
+MIT License
+
+Copyright (c) 2025 Paul Norais
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+    </pre>
+    <div class="back-link">
+      <p><a href="index.html">&larr; Back to Home</a></p>
+    </div>
+  </main>
+<script>
+  // Load the navbar
+  fetch('navbar.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('navbar').innerHTML = data;
+    })
+    .then(() => {
+      // Check if the user is logged in by calling the /profile-data route
+      fetch('/profile-data', { credentials: 'include' })
+        .then(res => {
+          if (res.status === 401) {
+            // Not logged in → show Sign Up and Log In
+            document.getElementById('signupLink').style.display = 'inline';
+            document.getElementById('loginLink').style.display = 'inline';
+            document.getElementById('logoutLink').style.display = 'none';
+            document.getElementById('profileLink').style.display = 'none';
+          } else {
+            // Logged in → show Profile and Log Out
+            document.getElementById('signupLink').style.display = 'none';
+            document.getElementById('loginLink').style.display = 'none';
+            document.getElementById('logoutLink').style.display = 'inline';
+            document.getElementById('profileLink').style.display = 'inline';
+          }
+        })
+        .catch(err => {
+          console.error('Error checking session state:', err);
+        });
+    });
+</script>
+</body>
+</html>
