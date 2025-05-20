@@ -32,6 +32,17 @@ const sessionMiddleware = session({
   }
 });
 
+const PROJECTS_FILE = path.join(__dirname, 'projects.json');
+
+function loadProjects() {
+  if (!fs.existsSync(PROJECTS_FILE)) return [];
+  return JSON.parse(fs.readFileSync(PROJECTS_FILE, 'utf8'));
+}
+
+function saveProjects(projects) {
+  fs.writeFileSync(PROJECTS_FILE, JSON.stringify(projects, null, 2));
+}
+
 app.use(sessionMiddleware);
 
 // Lier la session Express avec Socket.IO
@@ -41,6 +52,7 @@ io.use((socket, next) => {
 
 // Middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // Données chat (en mémoire)
@@ -258,6 +270,136 @@ app.get('/channel-messages/:name', (req, res) => {
   }
 
   res.json(messages[channelName] || []);
+});
+
+app.get('/projects', (req, res) => {
+  if (!req.session.user) return res.status(401).send('Not logged in');
+
+  const user = req.session.user.username;
+  const projects = loadProjects();
+  const visibleProjects = projects.filter(p => p.owner === user || p.members.includes(user));
+  res.json(visibleProjects);
+});
+
+app.get('/projects', (req, res) => {
+  if (!req.session.user) return res.status(401).send('Not logged in');
+
+  const user = req.session.user.username;
+  const projects = loadProjects();
+  const visibleProjects = projects.filter(p => p.owner === user || p.members.includes(user));
+  res.json(visibleProjects);
+});
+
+app.post('/projects', (req, res) => {
+  if (!req.session.user) return res.status(401).send('Not logged in');
+
+  const { projectName } = req.body;
+  const username = req.session.user.username;
+
+  const projects = loadProjects();
+  const newProject = {
+    id: Date.now(),
+    projectName,
+    owner: username,
+    members: [username],
+    tasks: []
+  };
+
+  projects.push(newProject);
+  saveProjects(projects);
+  res.status(201).send('Project created');
+});
+
+app.get('/projects/:id', (req, res) => {
+  if (!req.session.user) return res.status(401).send('Not logged in');
+  const projects = loadProjects();
+  const project = projects.find(p => p.id == req.params.id);
+  if (!project) return res.status(404).send('Project not found');
+  res.json(project);
+});
+
+app.post('/projects/:id/tasks', (req, res) => {
+  if (!req.session.user) return res.status(401).send('Not logged in');
+
+  const { title, assignedTo, dueDate, status } = req.body;
+  const projects = loadProjects();
+  const project = projects.find(p => p.id == req.params.id);
+
+  if (!project) return res.status(404).send('Project not found');
+
+  const newTask = {
+    id: Date.now(),
+    title,
+    assignedTo: assignedTo || '',
+    dueDate: dueDate || '',
+    status: status || 'To Do'
+  };
+
+  project.tasks.push(newTask);
+  saveProjects(projects);
+  res.status(201).send('Task added');
+});
+
+app.post('/projects/:id/members', (req, res) => {
+  if (!req.session.user) return res.status(401).send('Not logged in');
+
+  const username = req.session.user.username;
+  const { newMember } = req.body;
+  const projects = loadProjects();
+  const project = projects.find(p => p.id == req.params.id);
+  if (!project) return res.status(404).send('Project not found');
+  if (project.owner !== username) return res.status(403).send('Only owner can add members');
+
+  if (!project.members.includes(newMember)) {
+    project.members.push(newMember);
+    saveProjects(projects);
+  }
+
+  res.send('Member added');
+});
+
+app.patch('/projects/:id/tasks/:taskId/status', (req, res) => {
+  if (!req.session.user) return res.status(401).send('Not logged in');
+  const { status } = req.body;
+
+  const projects = loadProjects();
+  const project = projects.find(p => p.id == req.params.id);
+  if (!project) return res.status(404).send('Project not found');
+  if (project.owner !== req.session.user.username) return res.status(403).send('Only owner can modify status');
+
+  const task = project.tasks.find(t => t.id == req.params.taskId);
+  if (!task) return res.status(404).send('Task not found');
+
+  task.status = status;
+  saveProjects(projects);
+  res.send('Status updated');
+});
+
+app.delete('/projects/:id/tasks/:taskId', (req, res) => {
+  if (!req.session.user) return res.status(401).send('Not logged in');
+
+  const projects = loadProjects();
+  const project = projects.find(p => p.id == req.params.id);
+  if (!project) return res.status(404).send('Project not found');
+  if (project.owner !== req.session.user.username) return res.status(403).send('Only owner can delete tasks');
+
+  project.tasks = project.tasks.filter(t => t.id != req.params.taskId);
+  saveProjects(projects);
+  res.send('Task deleted');
+});
+
+app.delete('/projects/:id', (req, res) => {
+  if (!req.session.user) return res.status(401).send('Not logged in');
+  const username = req.session.user.username;
+
+  let projects = loadProjects();
+  const project = projects.find(p => p.id == req.params.id);
+  if (!project) return res.status(404).send('Project not found');
+  if (project.owner !== username) return res.status(403).send('Only owner can delete project');
+
+  projects = projects.filter(p => p.id != req.params.id);
+  saveProjects(projects);
+  res.send('Project deleted');
 });
 
 // 🚀 Lancement du serveur

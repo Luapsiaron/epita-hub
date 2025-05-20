@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('logoutLink').style.display = 'none';
         document.getElementById('profileLink').style.display = 'none';
         document.getElementById('chatLink').style.display = 'none';
+	document.getElementById('project-link').style.display = 'none';
       } else {
         // Connecté : afficher Profile, Log Out et Chat
         return res.json().then(user => {
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
           document.getElementById('logoutLink').style.display = 'inline';
           document.getElementById('profileLink').style.display = 'inline';
           document.getElementById('chatLink').style.display = 'inline';
+	  document.getElementById('projectLink').style.display = 'inline';
 
           console.log('Logged in as:', user.username);
         });
