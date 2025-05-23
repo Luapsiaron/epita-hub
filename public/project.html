@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Management – EPITA Hub</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    body {
+      background-color: #204060;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #0c2340;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      color: #0c2340;
+    }
+
+    form {
+      margin-bottom: 2rem;
+    }
+
+    input[type="text"] {
+      padding: 0.5rem;
+      width: 60%;
+      margin-right: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #0c2340;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #143355;
+    }
+
+    .project-card {
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      color: #0c2340;
+    }
+
+    .project-card a {
+      text-decoration: none;
+      color: #204060;
+      font-weight: bold;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main>
+    <h1>Project Management</h1>
+
+    <section>
+      <h2>Create a New Project</h2>
+      <form id="create-project-form">
+        <input type="text" name="projectName" placeholder="Project name" required />
+        <button type="submit">Create</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Your Projects</h2>
+      <div id="project-list"></div>
+    </section>
+  </main>
+
+  <script src="/navbar.js"></script>
+  <script src="/project.js"></script>
+</body>
+</html>
+
