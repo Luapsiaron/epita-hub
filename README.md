@@ -166,59 +166,59 @@ This project simplifies the complexities of managing user interactions and proje
 		        </tr>
 	        </thead>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>index.html</td>
+		            <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/index.html'>index.html</a></b></td>
 			        <td style='padding: 8px;'>Landing page of the application. Redirects users to login or sign-up and serves as the entry point for unauthenticated visitors.</td>
 		        </tr>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>login.html</td>
+			        <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/login.html'>login.html</a></b></td>
 			        <td style='padding: 8px;'>Login form interface. Sends user credentials to the server for authentication.</td>
 		        </tr>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>signup.html</td>
+			        <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/signup.html'>signup.html</a></b></td>
 			        <td style='padding: 8px;'>Registration page allowing users to create an account with campus, bio, and password information.</td>
 		        </tr>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>profile.html</td>
+			        <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/profile.html'>profile.html</a></b></td>
 			        <td style='padding: 8px;'>User profile display showing username, bio, campus, and profile picture. Pulls data from users.json.</td>
 		        </tr>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>edit.html</td>
+			        <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/edit.html'>edit.html</a></b></td>
 			        <td style='padding: 8px;'>Profile editing interface. Allows users to update bio, campus, and profile image.</td>
 		        </tr>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>navbar.html / navbar.js</td>
+		            <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/navbar.html'>navbar.html</a></b> / <b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/navbar.js'>navbar.js</a></b></td>
 			        <td style='padding: 8px;'>Reusable navigation bar and JavaScript logic to dynamically insert the navbar into each page and handle UI interactions.</td>
 		        </tr>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>chat.html / chat.js</td>
+			        <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/chat.html'>chat.html</a></b> / <b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/chat.js'>chat.js</a></b></td>
 			        <td style='padding: 8px;'>Real-time chat interface using Socket.IO. Supports multiple channels and displays message history.</td>
 		        </tr>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>project.html / project.js</td>
+			        <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/project.html'>project.html</a></b> / <b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/project.js'>project.js</a></b></td>
 			        <td style='padding: 8px;'>Project dashboard allowing users to view and manage their assigned projects and team roles.</td>
 		        </tr>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>project-tasks.html / project-tasks.js</td>
+		        <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/project-tasks.html'>project-tasks.html</a></b> / <b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/project-tasks.js'>project-tasks.js</a></b></td>
 			        <td style='padding: 8px;'>Task management interface for a selected project. Supports assignment, status updates, and member tracking.</td>
 		        </tr>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>calendar.html</td>
+			        <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/calendar.html'>calendar.html</a></b></td>
 			        <td style='padding: 8px;'>Displays synchronized campus calendars from `.ics` files to help users coordinate schedules.</td>
 		        </tr>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>calendars/</td>
+			        <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/calendars/'>calendars/</a></b></td>
 			        <td style='padding: 8px;'>Folder containing `.ics` files for each EPITA campus (e.g. Rennes, Paris, Lyon) used in calendar.html.</td>
 		        </tr>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>monitoring.html</td>
+			        <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/monitoring.html'>monitoring.html</a></b></td>
 			        <td style='padding: 8px;'>Monitoring interface for overviewing internal server or usage status (work-in-progress / optional).</td>
 		        </tr>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>style.css</td>
+			        <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/style.css'>style.css</a></b></td>
 			        <td style='padding: 8px;'>Main stylesheet used across all HTML pages to apply a consistent layout and design system.</td>
 		        </tr>
 		        <tr style='border-bottom: 1px solid #eee;'>
-			        <td style='padding: 8px;'>LICENSE.html</td>
+		        <td style='padding: 8px;'><b><a href='https://github.com/Luapsiaron/epita-hub/blob/master/public/LICENSE.html'>LICENSE.html</a></b></td>
 			        <td style='padding: 8px;'>HTML rendering of the MIT license, displayed from within the web interface for transparency.</td>
 		        </tr>
 	        </table>
