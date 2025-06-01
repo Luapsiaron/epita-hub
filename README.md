@@ -49,7 +49,7 @@
 
 Built with Node.js and designed to run on an IaaS environment (EC2), it showcases practical DevOps skills like scripting, deployment automation, and service configuration.
 
-**Why epita-hub?**
+✨ **Key Features:**
 
 This project simplifies the complexities of managing user interactions and project data. The core features include:
 
@@ -151,80 +151,79 @@ This project simplifies the complexities of managing user interactions and proje
 		    </table>
 	    </blockquote>
 	</details>
-	
+	<!-- public Submodule -->
 	<details>
-	<summary><b>public</b></summary>
-	<blockquote>
-	    <div class='directory-path' style='padding: 8px 0; color: #666;'>
-		    <code><b>⦿ public</b></code>
-	    </div>
-	    <table style='width: 100%; border-collapse: collapse;'>
-	    <thead>
-		    <tr style='background-color: #f8f9fa;'>
-			    <th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-			    <th style='text-align: left; padding: 8px;'>Summary</th>
-		    </tr>
-	    </thead>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>index.html</td>
-			    <td style='padding: 8px;'>Landing page of the application. Redirects users to login or sign-up and serves as the entry point for unauthenticated visitors.</td>
-		    </tr>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>login.html</td>
-			    <td style='padding: 8px;'>Login form interface. Sends user credentials to the server for authentication.</td>
-		    </tr>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>signup.html</td>
-			    <td style='padding: 8px;'>Registration page allowing users to create an account with campus, bio, and password information.</td>
-		    </tr>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>profile.html</td>
-			    <td style='padding: 8px;'>User profile display showing username, bio, campus, and profile picture. Pulls data from users.json.</td>
-		    </tr>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>edit.html</td>
-			    <td style='padding: 8px;'>Profile editing interface. Allows users to update bio, campus, and profile image.</td>
-		    </tr>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>navbar.html / navbar.js</td>
-			    <td style='padding: 8px;'>Reusable navigation bar and JavaScript logic to dynamically insert the navbar into each page and handle UI interactions.</td>
-		    </tr>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>chat.html / chat.js</td>
-			    <td style='padding: 8px;'>Real-time chat interface using Socket.IO. Supports multiple channels and displays message history.</td>
-		    </tr>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>project.html / project.js</td>
-			    <td style='padding: 8px;'>Project dashboard allowing users to view and manage their assigned projects and team roles.</td>
-		    </tr>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>project-tasks.html / project-tasks.js</td>
-			    <td style='padding: 8px;'>Task management interface for a selected project. Supports assignment, status updates, and member tracking.</td>
-		    </tr>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>calendar.html</td>
-			    <td style='padding: 8px;'>Displays synchronized campus calendars from `.ics` files to help users coordinate schedules.</td>
-		    </tr>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>calendars/</td>
-			    <td style='padding: 8px;'>Folder containing `.ics` files for each EPITA campus (e.g. Rennes, Paris, Lyon) used in calendar.html.</td>
-		    </tr>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>monitoring.html</td>
-			    <td style='padding: 8px;'>Monitoring interface for overviewing internal server or usage status (work-in-progress / optional).</td>
-		    </tr>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>style.css</td>
-			    <td style='padding: 8px;'>Main stylesheet used across all HTML pages to apply a consistent layout and design system.</td>
-		    </tr>
-		    <tr style='border-bottom: 1px solid #eee;'>
-			    <td style='padding: 8px;'>LICENSE.html</td>
-			    <td style='padding: 8px;'>HTML rendering of the MIT license, displayed from within the web interface for transparency.</td>
-		    </tr>
-	    </table>
-	</blockquote>
+	    <summary><b>public</b></summary>
+	    <blockquote>
+	        <div class='directory-path' style='padding: 8px 0; color: #666;'>
+		        <code><b>⦿ public</b></code>
+	        </div>
+	        <table style='width: 100%; border-collapse: collapse;'>
+	        <thead>
+		        <tr style='background-color: #f8f9fa;'>
+			        <th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
+			        <th style='text-align: left; padding: 8px;'>Summary</th>
+		        </tr>
+	        </thead>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>index.html</td>
+			        <td style='padding: 8px;'>Landing page of the application. Redirects users to login or sign-up and serves as the entry point for unauthenticated visitors.</td>
+		        </tr>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>login.html</td>
+			        <td style='padding: 8px;'>Login form interface. Sends user credentials to the server for authentication.</td>
+		        </tr>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>signup.html</td>
+			        <td style='padding: 8px;'>Registration page allowing users to create an account with campus, bio, and password information.</td>
+		        </tr>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>profile.html</td>
+			        <td style='padding: 8px;'>User profile display showing username, bio, campus, and profile picture. Pulls data from users.json.</td>
+		        </tr>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>edit.html</td>
+			        <td style='padding: 8px;'>Profile editing interface. Allows users to update bio, campus, and profile image.</td>
+		        </tr>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>navbar.html / navbar.js</td>
+			        <td style='padding: 8px;'>Reusable navigation bar and JavaScript logic to dynamically insert the navbar into each page and handle UI interactions.</td>
+		        </tr>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>chat.html / chat.js</td>
+			        <td style='padding: 8px;'>Real-time chat interface using Socket.IO. Supports multiple channels and displays message history.</td>
+		        </tr>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>project.html / project.js</td>
+			        <td style='padding: 8px;'>Project dashboard allowing users to view and manage their assigned projects and team roles.</td>
+		        </tr>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>project-tasks.html / project-tasks.js</td>
+			        <td style='padding: 8px;'>Task management interface for a selected project. Supports assignment, status updates, and member tracking.</td>
+		        </tr>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>calendar.html</td>
+			        <td style='padding: 8px;'>Displays synchronized campus calendars from `.ics` files to help users coordinate schedules.</td>
+		        </tr>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>calendars/</td>
+			        <td style='padding: 8px;'>Folder containing `.ics` files for each EPITA campus (e.g. Rennes, Paris, Lyon) used in calendar.html.</td>
+		        </tr>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>monitoring.html</td>
+			        <td style='padding: 8px;'>Monitoring interface for overviewing internal server or usage status (work-in-progress / optional).</td>
+		        </tr>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>style.css</td>
+			        <td style='padding: 8px;'>Main stylesheet used across all HTML pages to apply a consistent layout and design system.</td>
+		        </tr>
+		        <tr style='border-bottom: 1px solid #eee;'>
+			        <td style='padding: 8px;'>LICENSE.html</td>
+			        <td style='padding: 8px;'>HTML rendering of the MIT license, displayed from within the web interface for transparency.</td>
+		        </tr>
+	        </table>
+	    </blockquote>
     </details>
-
 	<!-- scripts Submodule -->
     <details>
 	    <summary><b>scripts</b></summary>
@@ -258,7 +257,7 @@ This project simplifies the complexities of managing user interactions and proje
 		    </table>
 	    </blockquote>
     </details>
-
+</details>
 
 ---
 
