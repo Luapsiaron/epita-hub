@@ -12,7 +12,7 @@
 
   <a href="https://www.youtube.com/watch?v=tyUSZW-4HD4"><strong>🎥 Watch Deployment Video</strong></a>
 
-  <a href="ttps://github.com/Luapsiaron/epita-hub/epita-hub-documentation.pdf"><strong>📄 Server Documentation</strong></a>
+  <a href="https://github.com/Luapsiaron/epita-hub/raw/main/epita-hub-documentation.pdf"><strong>📄 Server Documentation</strong></a>
 </p>
 
 <em>Empower collaboration, ignite innovation, connect effortlessly.</em>
