@@ -7,6 +7,14 @@
 
 # EPITA-HUB
 
+<p align="center">
+  <a href="https://epitahub.fun"><strong>🔗 Visit Epita Hub Site (epitahub.fun)</strong></a>
+
+  <a href="https://www.youtube.com/watch?v=tyUSZW-4HD4"><strong>🎥 Watch Deployment Video</strong></a>
+
+  <a href="ttps://github.com/Luapsiaron/epita-hub/epita-hub-documentation.pdf"><strong>📄 Server Documentation</strong></a>
+</p>
+
 <em>Empower collaboration, ignite innovation, connect effortlessly.</em>
 
 <!-- BADGES -->
@@ -277,7 +285,7 @@ Install epita-hub on a fresh EC2 instance in just a few steps using the automate
 2. **Clone the repository:**
 
     ```sh
-    ❯ git clone https://github.com/Luapsiaron/epita-hub-auth.git
+    ❯ git clone https://github.com/Luapsiaron/epita-hub.git ~/epita-hub-auth
     ❯ cd epita-hub-auth/scripts
 
     ```
