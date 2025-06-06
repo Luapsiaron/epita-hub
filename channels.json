@@ -10,14 +10,5 @@
     "creator": "paulnorais",
     "private": false,
     "members": []
-  },
-  "private": {
-    "name": "private",
-    "creator": "paulnorais",
-    "private": true,
-    "members": [
-      "test",
-      "paulnorais"
-    ]
   }
 }

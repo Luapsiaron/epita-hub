@@ -101,7 +101,6 @@
   <main>
     <h1 id="project-title">Project</h1>
 
-    <!-- Formulaire ajout de tâche -->
     <form id="add-task-form">
       <input type="text" name="title" placeholder="Task title" required />
       <input type="text" name="assignedTo" placeholder="Assign to (username)" />
@@ -109,14 +108,12 @@
       <button type="submit">Add Task</button>
     </form>
 
-    <!-- Colonnes de tâches -->
     <div class="columns">
       <div class="column" id="todo"><h2>To Do</h2></div>
       <div class="column" id="inprogress"><h2>In Progress</h2></div>
       <div class="column" id="done"><h2>Done</h2></div>
     </div>
 
-    <!-- Outils pour le propriétaire -->
     <div id="owner-section" style="display: none;">
       <h2>Owner Tools</h2>
       <form id="add-member-form">

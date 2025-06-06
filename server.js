@@ -10,7 +10,7 @@ const app = express();
 const { Server } = require('socket.io');
 const server = http.createServer(app);
 const io = new Server(server, {
-  transports: ['polling'], // 🔑 OPTION IMPORTANTE
+  transports: ['polling'],
 });
 
 const USERS_FILE = path.join(__dirname, 'users.json');
@@ -18,15 +18,15 @@ const USERS_FILE = path.join(__dirname, 'users.json');
 const CHANNELS_FILE = path.join(__dirname, 'channels.json');
 const MESSAGES_FILE = path.join(__dirname, 'messages.json');
 
-app.set('trust proxy', 1); // ✅ nécessaire pour détecter HTTPS derrière Apache
+app.set('trust proxy', 1);
 
-// Session
+
 const sessionMiddleware = session({
   secret: 'epitahub_secret',
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: 'auto', // ✅ pour HTTPS
+    secure: 'auto',
     httpOnly: true,
     sameSite: 'lax'
   }
@@ -45,20 +45,16 @@ function saveProjects(projects) {
 
 app.use(sessionMiddleware);
 
-// Lier la session Express avec Socket.IO
 io.use((socket, next) => {
   sessionMiddleware(socket.request, {}, next);
 });
 
-// Middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-// Données chat (en mémoire)
 let chatMessages = [];
 
-// Fonctions utilisateurs
 function loadUsers() {
   if (!fs.existsSync(USERS_FILE)) return [];
   return JSON.parse(fs.readFileSync(USERS_FILE, 'utf8'));
@@ -70,7 +66,6 @@ function saveUser(user) {
   fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
 }
 
-// Routes
 app.get('/', (req, res) => {
   res.redirect('/login.html');
 });
@@ -140,13 +135,11 @@ app.get('/profile.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/profile.html'));
 });
 
-// 💬 Route pour historique du chat
 app.get('/chat-history', (req, res) => {
   if (!req.session.user) return res.status(401).send('Not logged in');
   res.json(chatMessages);
 });
 
-// 💬 Socket.IO – gestion du chat
 io.on('connection', (socket) => {
   console.log('✅ Socket connected via polling:', socket.id);
 
@@ -402,7 +395,7 @@ app.delete('/projects/:id', (req, res) => {
   res.send('Project deleted');
 });
 
-// 🚀 Lancement du serveur
+// Server Launch
 server.listen(3000, () => {
   console.log('✅ EPITA Hub server running on http://localhost:3000');
 });
